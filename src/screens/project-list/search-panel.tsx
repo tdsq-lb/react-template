@@ -1,9 +1,14 @@
-import React from "react"
 
-export const SearchPanel = ({ param, setParam, users }) => {
+interface SearchPanelProps {
+  users: User[],
+  param: {
+    name: string;
+    personId: string;
+  }
+  setParam: (params: SearchPanelProps['param']) => void;
+}
 
-
-
+export const SearchPanel = ({ param, setParam, users }: SearchPanelProps) => {
   return <form>
     <div>
       <input type="text" value={param.name} onChange={evt => setParam({ ...param, name: evt.target.value })} />

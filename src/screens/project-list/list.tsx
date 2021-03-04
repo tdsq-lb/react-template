@@ -1,5 +1,17 @@
-import React from "react"
-export const List = ({ list, users }) => {
+interface Project {
+  id: string;
+  name: string;
+  personId: string;
+  organization: string;
+  created: number;
+}
+
+interface ListProps {
+  list: Project[]
+  users: User[]
+}
+
+export const List = ({ list, users }: ListProps) => {
   return <table>
     <thead>
       <tr>
